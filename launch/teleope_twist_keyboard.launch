@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="rosserial_python" name="serial_node" type="serial_node.py" required="true" />
+  <node pkg="mouserobot_ros" name="keyboard_cmd_vel" type="teleope_twist_keyboard.py" required="true" />
+</launch>
