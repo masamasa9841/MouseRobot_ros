@@ -27,7 +27,7 @@ source ~/catkin_ws/devel/setup.bash
 ```
 
 ### 使い方
-1. Arduinoにパッケージをビルドします。ArduinoIDEで　`Arduino/Arduino.ino`をビルドします。
+1. Arduinoにパッケージをビルドします。ArduinoIDEで　`Arduino/logitech_teleop.ino`をビルドします。
 
 2. rosスクリプトを実行します。
 ```
