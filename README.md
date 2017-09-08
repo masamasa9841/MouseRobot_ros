@@ -1,12 +1,15 @@
 # mouserobot_ros
+## MouseRobotについて
+タミヤの壁伝いれずみに二つの光センサを取り付けて、光に反応するロボットです。
+* 参考: [https://jsupratman13.github.io/MouseRobotProject/index.html](https://jsupratman13.github.io/MouseRobotProject/index.html)
 ## rosでMouseRobotを操作しよう。
-主にゲームコントローラーを使って操作します。
+ゲームコントローラーを使って操作します。
 このパッケージは以下のコントローラーをサポートします。
 * Logicool Wireless Gamepad F710
 
 ### 前提条件
 1. PCにROSのインストールとセットアップ
-* 参考: [http://wiki.ros.org/rosserial?distro=kinetic](http://wiki.ros.org/rosserial?distro=kinetic)
+* 参考: [http://wiki.ros.org/kinetic/Installation](http://wiki.ros.org/kinetic/Installation)
 
 2. rosserialのインストール
 * 参考: [http://wiki.ros.org/rosserial?distro=kinetic](http://wiki.ros.org/rosserial?distro=kinetic)
@@ -33,6 +36,3 @@ source ~/catkin_ws/devel/setup.bash
 ```
 roslaunch mouserobot_ros arduino_ros.launch
 ```
-
-### コントローラーの使い方
-そのうち書く
