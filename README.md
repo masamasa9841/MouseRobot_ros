@@ -3,7 +3,9 @@
 タミヤの壁伝いれずみに二つの光センサを取り付けて、光に反応するロボットです。
 * 参考: [https://jsupratman13.github.io/MouseRobotProject/index.html](https://jsupratman13.github.io/MouseRobotProject/index.html)
 ## rosでMouseRobotを操作しよう。
-ゲームコントローラーを使って操作します。
+今回はパソコンのキーボードかゲームコントローラーを使ってMouseRobotを操作します。
+
+
 このパッケージは以下のコントローラーをサポートします。
 * Logicool Wireless Gamepad F710
 
@@ -14,7 +16,7 @@
 2. rosserialのインストール
 * 参考: [http://wiki.ros.org/rosserial?distro=kinetic](http://wiki.ros.org/rosserial?distro=kinetic)
 
-3. joy_nodeのインストール
+3. joy_nodeのインストール(ゲームコントローラーを使う場合)
 ```
 sudo apt install ros-kinetic-joy
 ```
@@ -30,9 +32,20 @@ source ~/catkin_ws/devel/setup.bash
 ```
 
 ### 使い方
-1. Arduinoにパッケージをビルドします。ArduinoIDEで　`Arduino/logitech_teleop.ino`をビルドします。
-
+1. Arduinoにパッケージをビルドします。ArduinoIDEで`Arduino/logitech_teleop.ino`をビルドします。
 2. rosスクリプトを実行します。
+#### ゲームコントローラーの場合
 ```
-roslaunch mouserobot_ros arduino_ros.launch
+roslaunch mouserobot_ros teleope_twist_logicool.launch
+```
+
+#### キーボードの場合
+```
+roslaunch mouserobot_ros teleope_twist_logicool.launch
+```
+
+#### エラーが出た場合
+エラー(Permission Denied)が出た場合、こちらのコマンドを実行します。Arduinoを繋ぎ直すたびにエラーが出る可能性があります。
+```
+sudo chmod 666 /dev/ttyUSB0
 ```
