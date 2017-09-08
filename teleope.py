@@ -1,20 +1,22 @@
-#! /usr/bin/env python
+#!/usr/bin/env python
 
 import rospy
 from sensor_msgs.msg import Joy
+from geometry_msgs.msg import Twist
 
 
 class JoyTwist(object):
     def __init__(self):
         self._joy_sub = rospy.Subscriber(
             '/joy', Joy, self.joy_callback, queue_size=1)
+        self._twist_pub = rospy.Publisher(
+            '/cmd_vel', Twist, queue_size=100)
 
     def joy_callback(self, joy_msg):
-        # up -> joy_msgs.axes[1] = 1
-        # down -> joy_msgs.axes[1] = -1
-        # left -> joy_msgs.axes[0] = 1
-        # right -> joy_msgs.axes[0] = -1
-        print(joy_msg.axes[0])
+        twist = Twist()
+        twist.linear.x = joy_msg.axes[1] * 0.2
+        twist.angular.z = joy_msg.axes[0] * 3.14 / 32
+        self._twist_pub.publish(twist)
 
 
 if __name__ == '__main__':

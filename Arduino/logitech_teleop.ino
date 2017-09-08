@@ -1,24 +1,33 @@
 #include <ros.h>
-#include <sensor_msgs/Joy.h>
+#include <geometry_msgs/Twist.h>
 
 ros::NodeHandle nh;
 
-void messageCb(const sensor_msgs::Joy &joy_msg)
+void messageCb(const geometry_msgs::Twist &joy_msg)
 {
-
-  if (joy_msg.axes[1] != 1.0)
-  {
-    digitalWrite(2, LOW);
-    digitalWrite(12, LOW);
-  }
-  else
+  if (joy_msg.linear.x > 0.0)
   {
     digitalWrite(2, HIGH);
     digitalWrite(12, HIGH);
   }
+  else if (joy_msg.angular.z > 0.0)
+  {
+    digitalWrite(2, HIGH);
+    digitalWrite(12, LOW);
+  }
+  else if (joy_msg.angular.z < 0.0)
+  {
+    digitalWrite(2, LOW);
+    digitalWrite(12, HIGH);
+  }
+  else
+  {
+    digitalWrite(2, LOW);
+    digitalWrite(12, LOW);
+  }
 }
 
-ros::Subscriber<sensor_msgs::Joy> sub("/joy", &messageCb);
+ros::Subscriber<geometry_msgs::Twist> sub("/cmd_vel", &messageCb);
 
 void setup()
 {
