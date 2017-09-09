@@ -3,7 +3,7 @@
 タミヤの壁伝いれずみに二つの光センサを取り付けて、光に反応するロボットです。
 * 参考: [https://jsupratman13.github.io/MouseRobotProject/index.html](https://jsupratman13.github.io/MouseRobotProject/index.html)
 ## rosでMouseRobotを操作しよう。
-今回はパソコンのキーボードかゲームコントローラーを使ってMouseRobotを操作します。
+このリポジトリはゲームコントラーまたは、キーボードを使ってMouseRobotを操作する紹介です。
 
 
 このパッケージは以下のコントローラーをサポートします。
@@ -33,19 +33,21 @@ source ~/catkin_ws/devel/setup.bash
 
 ### 使い方
 1. Arduinoにパッケージをビルドします。ArduinoIDEで`Arduino/logitech_teleop.ino`をビルドします。
-2. rosスクリプトを実行します。
-#### ゲームコントローラーの場合
+2. 任意のrosスクリプトを実行します。
+#### ゲームコントローラーで操作する場合
 ```
 roslaunch mouserobot_ros teleope_twist_logicool.launch
 ```
 
-#### キーボードの場合
+#### キーボードで操作する場合
 ```
 roslaunch mouserobot_ros teleope_twist_logicool.launch
 ```
 
 #### エラーが出た場合
-エラー(Permission Denied)が出た場合、こちらのコマンドを実行します。Arduinoを繋ぎ直すたびにエラーが出る可能性があります。
+エラー(Permission Denied)が出た場合、こちらのコマンドを実行します。
+
+Arduinoを繋ぎ直すたびにエラーが出る可能性があります。
 ```
 sudo chmod 666 /dev/ttyUSB0
 ```
