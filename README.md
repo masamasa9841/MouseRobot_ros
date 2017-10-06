@@ -51,3 +51,9 @@ Arduinoを繋ぎ直すたびにエラーが出る可能性があります。
 ```
 sudo chmod 666 /dev/ttyUSB0
 ```
+
+こちらのコマンドを使用するといいみたいです(まだ試していません)。
+```
+sudo gpasswd -a ユーザ名 dialout
+```
+
