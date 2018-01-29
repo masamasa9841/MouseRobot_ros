@@ -23,20 +23,19 @@
 ### 前提条件
 
 1. PCにROSのインストールとセットアップ
-
-* 参考: [http://wiki.ros.org/kinetic/Installation](http://wiki.ros.org/kinetic/Installation)
+    * 参考: [http://wiki.ros.org/kinetic/Installation](http://wiki.ros.org/kinetic/Installation)
 
 1. Arduino IDEのセットアップ
-* 参考: [http://wiki.ros.org/ja/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup](http://wiki.ros.org/ja/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup)
+    * 参考: [http://wiki.ros.org/ja/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup](http://wiki.ros.org/ja/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup)
 
 1. rosserialのインストール
-* 参考: [http://wiki.ros.org/rosserial?distro=kinetic](http://wiki.ros.org/rosserial?distro=kinetic)
+    * 参考: [http://wiki.ros.org/rosserial?distro=kinetic](http://wiki.ros.org/rosserial?distro=kinetic)
 
 1. joy_nodeのインストール(ゲームコントローラーを使う場合)
 
-```shell
-sudo apt install ros-kinetic-joy
-```
+    ```shell
+    sudo apt install ros-kinetic-joy
+    ```
 
 ### インストール
 
